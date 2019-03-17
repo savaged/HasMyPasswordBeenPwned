@@ -1,5 +1,4 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
 using Savaged.HasMyPasswordBeenPwned.Lib;
 using System.Threading.Tasks;
 
