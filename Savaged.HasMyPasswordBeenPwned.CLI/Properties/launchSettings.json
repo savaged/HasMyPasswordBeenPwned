@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Savaged.HasMyPasswordBeenPwned.CLI": {
+      "commandName": "Project",
+      "commandLineArgs": "password"
+    }
+  }
+}
