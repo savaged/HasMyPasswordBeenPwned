@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Savaged.HasMyPasswordBeenPwned.CLI;
+using System;
 
 namespace Savaged.HasMyPasswordBeenPwned.Test
 {
@@ -13,7 +14,7 @@ namespace Savaged.HasMyPasswordBeenPwned.Test
             var feedback = program
                 .Run(new string[] { "password" });
             Assert.AreEqual(
-                "Pwned! Change it!", 
+                $"{Environment.NewLine}Pwned! Change it!", 
                 feedback);
         }
     }
