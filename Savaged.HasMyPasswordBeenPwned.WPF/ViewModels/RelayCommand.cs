@@ -3,6 +3,11 @@ using System.Windows.Input;
 
 namespace Savaged.HasMyPasswordBeenPwned.WPF.ViewModels
 {
+    /// <Summary>
+    /// Had to roll my own here because I couldn't find the MvvmLight verison.
+    /// Actually I didn't roll my own, I just copied from 
+    /// https://docs.microsoft.com/en-us/dotnet/standard/cross-platform/using-portable-class-library-with-model-view-view-model
+    /// </Summary>
     public class RelayCommand : ICommand
     {
         private readonly Action _handler;

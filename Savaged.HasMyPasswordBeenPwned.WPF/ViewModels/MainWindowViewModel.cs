@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Input;
 using GalaSoft.MvvmLight;
+using Savaged.HasMyPasswordBeenPwned.Lib;
 
 namespace Savaged.HasMyPasswordBeenPwned.WPF.ViewModels
 {
@@ -42,13 +43,15 @@ namespace Savaged.HasMyPasswordBeenPwned.WPF.ViewModels
 
         public RelayCommand CheckInputCmd { get; }
 
-        private void OnCheckInput()
+        private async void OnCheckInput()
         {
             if (CanExecuteCheck)
             {
                 IsBusy = true;
                 
-                Feedback = "TODO Wire up the lib";
+                var checkInputServ = new CheckInputService(Input);
+                var feedback = await checkInputServ.CheckAsync();
+                Feedback = feedback;
 
                 IsBusy = false;
             }
