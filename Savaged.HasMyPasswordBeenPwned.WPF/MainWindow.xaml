@@ -6,27 +6,23 @@
         xmlns:local="clr-namespace:Savaged.HasMyPasswordBeenPwned.WPF"
         xmlns:vm="clr-namespace:Savaged.HasMyPasswordBeenPwned.WPF.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Pwned?" Height="250" Width="600">
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="8*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0"
-               Content="{Binding Feedback}" 
-               HorizontalAlignment="Center" 
-               VerticalAlignment="Center"
-               FontSize="40"/>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="9*"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0"
+                       Grid.Row="0"
                        Margin="10"
                        Text="Input"/>
             <TextBox Grid.Column="1"
@@ -35,6 +31,11 @@
                      Margin="10"
                      Text="{Binding Feedback, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
+        <TextBlock Grid.Row="1"
+                   Text="{Binding Feedback}" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center"
+                   FontSize="40"/>
         <Button Grid.Row="2"
                 Content="Exit" 
                 FontSize="20" 
