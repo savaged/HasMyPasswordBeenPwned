@@ -1,0 +1,43 @@
+﻿<Window x:Class="Savaged.HasMyPasswordBeenPwned.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Savaged.HasMyPasswordBeenPwned.WPF"
+        xmlns:vm="clr-namespace:Savaged.HasMyPasswordBeenPwned.WPF.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0"
+               Content="{Binding Feedback}" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Center"
+               FontSize="40"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="9*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0"
+                       Margin="10"
+                       Text="Input"/>
+            <TextBox Grid.Column="1"
+                     Width="200"
+                     HorizontalAlignment="Left"
+                     Margin="10"
+                     Text="{Binding Feedback, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+        <Button Grid.Row="2"
+                Content="Exit" 
+                FontSize="20" 
+                Click="ButtonExit_Click"/>
+    </Grid>
+</Window>
