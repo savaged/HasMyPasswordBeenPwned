@@ -13,6 +13,7 @@ namespace Savaged.HasMyPasswordBeenPwned.CLI
             Console.ReadLine();
         }
 
+        // TODO move this to a library
         public string Run(string[] args)
         {
             var inputMgr = new InputManager(args);
@@ -25,7 +26,7 @@ namespace Savaged.HasMyPasswordBeenPwned.CLI
                 pwnedServ.LoadAsync().GetAwaiter().GetResult();
                 result = pwnedServ.IsPwned == true;
                 feedback += result ?
-                    $"{Environment.NewLine}Pwned! Change it!" :
+                    $"{Environment.NewLine} Pwned! Change it!" :
                     "Not Pwned, phew!";
             }
             return feedback;

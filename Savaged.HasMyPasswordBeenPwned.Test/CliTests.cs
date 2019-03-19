@@ -14,7 +14,7 @@ namespace Savaged.HasMyPasswordBeenPwned.Test
             var feedback = program
                 .Run(new string[] { "password" });
             Assert.AreEqual(
-                $"{Environment.NewLine}Pwned! Change it!", 
+                $"{Environment.NewLine} Pwned! Change it!", 
                 feedback);
         }
     }

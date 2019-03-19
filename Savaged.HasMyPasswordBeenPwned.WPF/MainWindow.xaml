@@ -19,7 +19,8 @@
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="9*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0"
                        Grid.Row="0"
@@ -29,16 +30,18 @@
                      Width="200"
                      HorizontalAlignment="Left"
                      Margin="10"
-                     Text="{Binding Feedback, UpdateSourceTrigger=PropertyChanged}"/>
+                     Text="{Binding Input, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Grid.Column="2"
+                    Content="Check"
+                    HorizontalAlignment="Left"
+                    Height="25" Width="100"
+                    IsDefault="True"
+                    Command="{Binding CheckInputCmd}"/>
         </Grid>
         <TextBlock Grid.Row="1"
                    Text="{Binding Feedback}" 
                    HorizontalAlignment="Center" 
                    VerticalAlignment="Center"
                    FontSize="40"/>
-        <Button Grid.Row="2"
-                Content="Exit" 
-                FontSize="20" 
-                Click="ButtonExit_Click"/>
     </Grid>
 </Window>

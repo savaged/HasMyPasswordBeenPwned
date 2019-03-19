@@ -24,10 +24,5 @@ namespace Savaged.HasMyPasswordBeenPwned.WPF
         {
             InitializeComponent();
         }
-
-        private void ButtonExit_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
     }
 }
